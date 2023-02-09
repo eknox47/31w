@@ -16,5 +16,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 body {
-    background-color: beige;
+    background-color: smoke;
+
+}
+body > * {
+    border: 2px solid black;
+    border-radius: 10px;
 }
