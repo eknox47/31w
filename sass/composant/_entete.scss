@@ -1,15 +1,23 @@
 
+.menu-entete-container {
 
-.menu {
-
-    ul {
+    .menu {
         display: flex;
-        list-style: none;   
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        list-style: none;  
+        list-style-type: none;
+        .menu-item{
+            flex: 1 0 70px;
             a {
-                text-decoration: none;
-                text-transform: uppercase;
+                padding: 3px 5px;
                 color: black;
-    
+                text-decoration: none;
             }
+            a:hover {
+                color: lightgray;
+            }
+        }
+
     }
 }
