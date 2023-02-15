@@ -161,4 +161,15 @@ h6 {
 
 p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/**------------------ COMPOSANT -------------*/
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+.menu ul a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
 }/*# sourceMappingURL=style.css.map */
