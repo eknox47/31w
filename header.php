@@ -8,3 +8,11 @@
     <?php wp_head(); ?>
 </head>
 <body>
+    <header>
+        <?php wp_nav_menu(array(
+            'menu' => 'entete',
+            'container' => 'nav'
+        )); ?>
+        <h1><a href="<?php bloginfo("url") ?>"><?php bloginfo("name") ?></a></h1>
+        <h2><?php bloginfo("descrition") ?></h2>
+    </header>
