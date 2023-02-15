@@ -1,9 +1,9 @@
 /*
 Theme Name: 31w Émile Daigneault
-Theme URI: https://github.com/eddymartin
+Theme URI: https://aecweb8.sg-host.com
 Author: Émile Daigneault
 Author URI: https://github.com/eknox47/31w
-Description: Introductin à la création d'un thème Wordpress
+Description: Introduction à la création d'un thème Wordpress
 Version: 1.0
 Requires at least: 6.1.1
 Tested up to: 5.4
@@ -15,10 +15,13 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-body {
-    background-color: smoke;
 
-}
-body > * {
-    
-}
+/**------------------ NORMALIZE -------------*/
+@import "normalize/normalize";
+@import "normalize/boxsizing";
+
+/**------------------ BASE ------------------*/
+@import "base/heading";
+
+
+
