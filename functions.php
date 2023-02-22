@@ -31,3 +31,21 @@ function enregistrement_des_menus(){
     ));
 }
 add_action( 'after_setup_theme', 'enregistrement_des_menus', 0 );
+
+/**
+ * Modifie la requete principale de Wordpress avant qu'elle soit exécuté
+ * le hook « pre_get_posts » se manifeste juste avant d'exécuter la requête principal
+ * Dépendant de la condition initiale on peut filtrer un type particulier de requête
+ * Dans ce cas çi nous filtrons la requête de la page d'accueil
+ * @param WP_query  $query la requête principal de WP
+ */
+function cidweb_modifie_requete_principal( $query ) {
+    if ( $query->is_home() //si page d'accueil
+        && $query->is_main_query() //si requete principale
+        && ! is_admin() ) { // si non tableau de bord
+            $query->set( 'category_name', 'cours' ); //filtre articles par categories "note-wp"
+            $query->set( 'orderby', 'title' ); //filtres des articles par ordre
+            $query->set( 'order', 'ASC' ); //tri en ordre ascendant
+    }
+}
+add_action( 'pre_get_posts', 'cidweb_modifie_requete_principal' );
