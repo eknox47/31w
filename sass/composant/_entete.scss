@@ -1,6 +1,12 @@
-
+.site__entete{
+}
+.logo__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .menu-entete-container {
-
+    
     .menu {
         display: flex;
         justify-content: flex-end;

@@ -164,6 +164,12 @@ p {
 }
 
 /**------------------ COMPOSANT -------------*/
+.logo__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .menu-entete-container .menu {
   display: flex;
   justify-content: flex-end;
@@ -182,4 +188,15 @@ p {
 }
 .menu-entete-container .menu .menu-item a:hover {
   color: lightgray;
+}
+
+.blocflex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.blocflex article {
+  border: 1px solid #aaa;
+  flex: 0 0 400px;
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
