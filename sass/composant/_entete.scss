@@ -1,6 +1,9 @@
 .site__entete{
-    font-family: roboto;
-    text-transform: uppercase;
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+
+    }
 }
 .logo__menu {
     display: flex;

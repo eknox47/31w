@@ -151,11 +151,6 @@ h1 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-family: "Slackey", cursive;
-}
-
 h3,
 h4,
 h5,
@@ -168,8 +163,8 @@ p {
 }
 
 /**------------------ COMPOSANT -------------*/
-.site__entete {
-  font-family: roboto;
+.site__entete a {
+  text-decoration: none;
   text-transform: uppercase;
 }
 
