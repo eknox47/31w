@@ -3,7 +3,6 @@
 ?>
 <?php get_header(); ?>
 <main>
-    <code>front-page.php</code>
     <h3>index.php</h3>
     <section class="blocflex">
         <?php 
@@ -14,7 +13,7 @@
 
                     <article>
                         <h3><a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
-                        <p><?php echo wp_trim_words(get_the_excerpt(), 4); ?></p>
+                        <p><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
                     </article>
                 <?php endwhile;
             endif;
