@@ -9,7 +9,7 @@
 get_header(); ?>
 <main>
     <code>search.php</code>
-    <section>
+    <section class="recherche">
     <?php 
         if (have_posts()) :
             while(have_posts()) : the_post();
@@ -17,11 +17,15 @@ get_header(); ?>
                 //the_permalink(); ?>
 
             <article>
-                <h5><a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></h5>
+                <h4><a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></h4>
                 
-                <?php wp_trim_words(get_the_excerpt(), 4);?>
+                <?= wp_trim_words(get_the_excerpt(), 50);?>
             </article>
+            <hr>
             <?php endwhile;
+        endif;
+        if (!have_posts()) :
+            echo "Aucun résultat";
         endif;
     ?>
     </section>
