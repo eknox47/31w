@@ -39,3 +39,17 @@
         }
     }
 }
+@media screen and (max-width:600px) {
+    .site__entete{
+        h1{
+            text-align: center;
+            padding: 2em;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+        
+            }
+        }
+    }
+    
+}
