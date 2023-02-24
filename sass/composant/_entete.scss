@@ -1,8 +1,11 @@
 .site__entete{
-    a {
-        text-decoration: none;
-        text-transform: uppercase;
-
+    h1{
+        text-align: center;
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+    
+        }
     }
 }
 .logo__menu {
@@ -20,7 +23,7 @@
         list-style-type: none;
         margin-left: auto;
         .menu-item{
-            flex: 1 0 50px;
+            flex: 1 0 70px;
             a {
                 padding: 3px 5px;
                 color: black;

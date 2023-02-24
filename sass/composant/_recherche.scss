@@ -1,8 +1,13 @@
-.recherche {
+.menusearch {
+    display: flex;
+    padding: 1em;
 
-    article {
-        background-color: lightgrey;
-        margin: 10px;
-        
+    .recherche {
+        padding-top: 1em;
+        article {
+            background-color: lightgrey;
+            margin: 10px;
+            
+        }
     }
 }

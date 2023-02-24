@@ -60,6 +60,10 @@ summary { /* 1 */
   display: block;
 }
 
+code {
+  display: none;
+}
+
 /**
  * Add the correct display in IE 9-.
  */
@@ -163,7 +167,10 @@ p {
 }
 
 /**------------------ COMPOSANT -------------*/
-.site__entete a {
+.site__entete h1 {
+  text-align: center;
+}
+.site__entete h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -183,7 +190,7 @@ p {
   margin-left: auto;
 }
 .menu-entete-container .menu .menu-item {
-  flex: 1 0 50px;
+  flex: 1 0 70px;
 }
 .menu-entete-container .menu .menu-item a {
   padding: 3px 5px;
@@ -196,7 +203,7 @@ p {
 
 .blocflex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .blocflex article {
@@ -219,7 +226,18 @@ p {
   color: black;
 }
 
-.recherche article {
+.menusearch {
+  display: flex;
+  padding: 1em;
+}
+.menusearch .recherche {
+  padding-top: 1em;
+}
+.menusearch .recherche article {
   background-color: lightgrey;
   margin: 10px;
+}
+
+footer h3 {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
