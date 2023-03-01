@@ -2,7 +2,7 @@
     //Ceci est notre modele.
 ?>
 <?php get_header(); ?>
-<main>
+<main class="site__main">
     <code>front-page.php</code>
     <section class="blocflex">
         <?php 
