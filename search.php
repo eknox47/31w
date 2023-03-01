@@ -7,7 +7,7 @@
     modele search.php affiche les resultats de recherche.
  */
 get_header(); ?>
-<main>
+<main class="site__main">
     <code>search.php</code>
     <section class="recherche">
     <?php 
