@@ -7,8 +7,7 @@
     <title>Document</title>
     <?php wp_head(); ?>
 </head>
-<body>
-
+<body class="site">
     <header class="site__entete">  
         <section class="logo__menu">
             <?php the_custom_logo(); ?> 
