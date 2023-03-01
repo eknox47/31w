@@ -12,9 +12,7 @@
         <section class="logo__menu">
             <?php the_custom_logo(); ?> 
             <div class="menusearch">
-                <?php
-                $category = get_queried_object();
-                wp_nav_menu(array(
+                <?php wp_nav_menu(array(
                     'menu' => 'entete',
                     'container' => 'nav'
                 )); ?> 
@@ -26,8 +24,15 @@
     </header>
     <aside class="site__aside">
         <h3>Menu Secondaire</h3>
-        <?php wp_nav_menu(array(
-            "menu" => "cours",
+        <?php
+        $category = get_queried_object();
+        if(isset($category)){
+            $lemenu = $category->slug;
+        }else {
+            $lemenu = "note-wp";
+        }
+         wp_nav_menu(array(
+            "menu" => $lemenu,
             "container"  => "nav"
         )) ?>
     </aside>
