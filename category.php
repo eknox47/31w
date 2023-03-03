@@ -16,7 +16,7 @@
       $query = new WP_Query( $args );
       if ( $query->have_posts() ) :
          while ( $query->have_posts() ) : $query->the_post(); ?>
-               <?php get_template_part("template-parts/categorie", $categorie->slug); ?>
+               <?php get_template_part("template-parts/categorie", $category->slug); ?>
          <?php endwhile; ?>
       <?php endif;
       wp_reset_postdata();?>
