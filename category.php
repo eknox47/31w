@@ -1,9 +1,9 @@
 
 <?php
-    /*
-    modele permet d'afficher une archive par categorie d'article
-     */
- get_header(); ?>
+/**
+*   Modèle category.php permet d'afficher une archive par catégorie d'article
+*/
+get_header() ?>
 <main class="site__main">
    <section class="blocflex">
       <?php
@@ -16,7 +16,7 @@
       $query = new WP_Query( $args );
       if ( $query->have_posts() ) :
          while ( $query->have_posts() ) : $query->the_post(); ?>
-               <?php get_template_part("template-parts/categorie", $category->slug); ?>
+               <?php get_template_part("template-parts/categorie",$category->slug); ?>
          <?php endwhile; ?>
       <?php endif;
       wp_reset_postdata();?>

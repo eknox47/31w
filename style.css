@@ -160,6 +160,17 @@ html {
   }
 }
 
+.no-aside {
+  grid-template-areas: "header" "main" "footer";
+  row-gap: 50px;
+}
+@media screen and (min-width: 1000px) {
+  .no-aside {
+    grid-template-columns: auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+}
+
 /**------------------ COMPOSANT -------------*/
 .site__entete h1 {
   text-align: center;
