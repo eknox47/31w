@@ -20,10 +20,10 @@
             </div> 
         </section>
         <h1><a href="<?php  bloginfo('url'); ?>"><?php  bloginfo('name'); ?></a></h1> 
-        <h2><?php  bloginfo('description'); ?></h2>
+        <h2><?php bloginfo('description'); ?></h2>
     </header>
     <?php 
-    if(is_front_page())
+    //if(is_front_page() == false)
     {
         get_template_part("template-parts/aside");
     }

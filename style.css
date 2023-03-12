@@ -124,7 +124,9 @@ html {
 
 /**------------------ BASE ------------------*/
 /**------------------layout------------------*/
-/**/
+/**
+Mise en page avec display: grid
+*/
 .site__entete {
   grid-area: header;
   padding: 1rem clamp(1rem, 3vw, 20rem);
@@ -143,10 +145,10 @@ html {
 
 .site__aside {
   grid-area: aside;
-  background-color: royalblue;
+  background-color: rgb(47, 148, 210);
 }
 
-/*body ou un conteneur global */
+/* body ou un conteneur globale */
 .site {
   display: grid;
   grid-template-columns: auto;
