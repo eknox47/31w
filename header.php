@@ -12,11 +12,15 @@
         <section class="logo__menu">
             <?php the_custom_logo(); ?> 
             <div class="menusearch">
+                <input type="checkbox" id="chkBurger">
                 <?php wp_nav_menu(array(
                     'menu' => 'entete',
                     'container' => 'nav'
                 )); ?> 
-                <?= get_search_form(); ?>   
+                <?= get_search_form(); ?> 
+                <label for="chkBurger" class="burger">
+                    <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" height="20" width="20">
+                </label>  
             </div> 
         </section>
         <h1><a href="<?php  bloginfo('url'); ?>"><?php  bloginfo('name'); ?></a></h1> 

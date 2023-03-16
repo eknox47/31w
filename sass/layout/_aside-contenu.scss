@@ -21,10 +21,16 @@ Mise en page avec display: grid
 .site__aside {
   grid-area: aside;
   background-color: rgb(47, 148, 210);
+
+  h3 {
+    margin-left: 2.5em;
+    
+  }
 }
 /* body ou un conteneur globale */
 .site {
   display: grid;
+  overflow-x: hidden;
   grid-template-columns: auto;
   grid-template-areas:
     "header"
@@ -42,7 +48,9 @@ Mise en page avec display: grid
 }
 
 .no-aside {
-  display: none;
+  .site__aside {
+    display: none;
+  }
   grid-template-areas:
     "header"
     "main"

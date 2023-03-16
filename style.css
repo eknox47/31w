@@ -22,10 +22,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 html {
-  background-color: #B1FFFF;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc901a' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23df7025' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23e9493f' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23e7115f' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23d40084' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -35,6 +31,7 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
+  background-color: whitesmoke;
   margin: 0;
 }
 
@@ -147,10 +144,14 @@ Mise en page avec display: grid
   grid-area: aside;
   background-color: rgb(47, 148, 210);
 }
+.site__aside h3 {
+  margin-left: 2.5em;
+}
 
 /* body ou un conteneur globale */
 .site {
   display: grid;
+  overflow-x: hidden;
   grid-template-columns: auto;
   grid-template-areas: "header" "aside" "main" "footer";
   row-gap: 50px;
@@ -163,9 +164,11 @@ Mise en page avec display: grid
 }
 
 .no-aside {
-  display: none;
   grid-template-areas: "header" "main" "footer";
   row-gap: 50px;
+}
+.no-aside .site__aside {
+  display: none;
 }
 @media screen and (min-width: 1000px) {
   .no-aside {
@@ -190,27 +193,62 @@ Mise en page avec display: grid
   align-items: center;
 }
 
-.menu-entete-container .menu {
+#chkBurger {
+  display: none;
+}
+
+#chkBurger:checked ~ .menu-entete-container {
+  transform: translateX(0);
+}
+
+.burger {
+  display: block;
+}
+@media screen and (min-width: 600px) {
+  .burger {
+    display: none;
+  }
+}
+
+.menu-entete-container {
+  transform: translateX(300px);
+  transition: transform 0.25s;
+}
+@media screen and (min-width: 600px) {
+  .menu-entete-container {
+    transform: translateX(0);
+  }
+}
+
+.menu {
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  list-style: none;
   list-style-type: none;
-  margin-left: auto;
+  flex-direction: column;
+  align-items: flex-end;
 }
-.menu-entete-container .menu .menu-item {
-  flex: 1 0 70px;
-  padding: 0 2em;
+@media screen and (min-width: 600px) {
+  .menu {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
-.menu-entete-container .menu .menu-item a {
+.menu .menu-item {
+  flex: 1 0 20px;
+  padding: 0 0.5em;
+}
+.menu .menu-item a {
   white-space: nowrap;
   font-size: 18px;
   padding: 3px 5px;
   color: black;
   text-decoration: none;
 }
-.menu-entete-container .menu .menu-item a:hover {
+.menu .menu-item a:hover {
   color: lightgray;
+}
+.menu .menu-item p {
+  margin: 0;
 }
 
 @media screen and (max-width: 600px) {
