@@ -62,8 +62,10 @@ add_action( 'pre_get_posts', 'cidweb_modifie_requete_principal' );
  function perso_menu_item_title($title, $item, $args) {
     // Remplacer 'nom_de_votre_menu' par l'identifiant de votre menu
     if($args->menu == 'cours') {
-    // Modifier la longueur du titre en fonction de vos besoins
-    $title = wp_trim_words($title, 3, ' ... ');
+        // Modifier la longueur du titre en fonction de vos besoins
+        $sigle = substr($title, 4, 3);
+        $title = substr($title, 7);
+        $title = "<div class='cours__sigle'>" . $sigle . "</div>" . "<p>" . wp_trim_words($title, 2, ' ... ') . "</p>";
     }
     return $title;
 }

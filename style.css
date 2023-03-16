@@ -163,6 +163,7 @@ Mise en page avec display: grid
 }
 
 .no-aside {
+  display: none;
   grid-template-areas: "header" "main" "footer";
   row-gap: 50px;
 }
@@ -202,7 +203,7 @@ Mise en page avec display: grid
   padding: 0 2em;
 }
 .menu-entete-container .menu .menu-item a {
-  width: fit-content;
+  white-space: nowrap;
   font-size: 18px;
   padding: 3px 5px;
   color: black;
@@ -222,6 +223,11 @@ Mise en page avec display: grid
     text-transform: uppercase;
   }
 }
+.recherche {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .blocflex {
   display: flex;
   justify-content: space-around;
@@ -261,16 +267,58 @@ Mise en page avec display: grid
 } */
 .menusearch {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: wrap;
   padding: 1em;
+  flex-direction: column-reverse;
 }
-.menusearch .recherche {
+@media screen and (min-width: 1000px) {
+  .menusearch {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+}
+.menusearch .main__recherche {
   padding-top: 1em;
 }
-.menusearch .recherche article {
+.menusearch .main__recherche article {
   background-color: lightgrey;
   margin: 10px;
+}
+.menusearch input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 footer h3 {
   text-align: center;
+}
+
+.menu-cours-container .menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1000px) {
+  .menu-cours-container .menu {
+    flex-direction: column;
+  }
+}
+.menu-cours-container .menu .menu-item {
+  list-style: none;
+}
+.menu-cours-container .menu .menu-item a .cours__sigle {
+  padding: 3px;
+}
+.menu-cours-container .menu .menu-item a .cours__titre {
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  .menu-cours-container .menu .menu-item a .cours__titre {
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -27,7 +27,7 @@
             flex: 1 0 70px;
             padding: 0 2em;
             a {
-                width: fit-content;
+                white-space: nowrap;
                 font-size: 18px;
                 padding: 3px 5px;
                 color: black;
@@ -51,5 +51,11 @@
             }
         }
     }
+    
+}
+
+.recherche {
+    display: flex;
+    flex-wrap: nowrap;
     
 }

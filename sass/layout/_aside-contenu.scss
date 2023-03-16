@@ -42,6 +42,7 @@ Mise en page avec display: grid
 }
 
 .no-aside {
+  display: none;
   grid-template-areas:
     "header"
     "main"
