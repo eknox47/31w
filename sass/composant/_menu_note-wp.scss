@@ -1,0 +1,29 @@
+.menu-note-wp-container {
+
+    .menu { 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @media screen and (min-width:1000px){
+            flex-direction: column;
+        }
+        .menu-item {
+            list-style: none;
+            
+
+            a {
+
+                .cours__sigle {
+
+                    padding: 3px;
+                }
+                .cours__titre {
+                    display: none;
+                    @media screen and (min-width:1000px){
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

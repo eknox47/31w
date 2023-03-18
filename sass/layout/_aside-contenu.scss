@@ -20,11 +20,19 @@ Mise en page avec display: grid
 
 .site__aside {
   grid-area: aside;
-  background-color: rgb(47, 148, 210);
+  background-color: purple;
+  color: white;
+  border-radius: 10px;
+  margin-left: 2em;
 
   h3 {
     margin-left: 2.5em;
     
+  }
+  a {
+    div,p {
+      color: white;
+    }
   }
 }
 /* body ou un conteneur globale */
