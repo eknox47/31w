@@ -183,6 +183,23 @@ Mise en page avec display: grid
   }
 }
 
+.site__main {
+  /* margin: 0 2em 2em 2em;
+  padding: 3em;
+  background-color: orange;
+  border-radius: 15px;
+  border: 2px solid black;
+
+  h1,p {
+      max-width: 800px;
+      margin: 2em;
+  }
+  p {
+      font-size: 20px;
+      line-height: 1.2;
+  } */
+}
+
 /**------------------ COMPOSANT -------------*/
 .site__entete {
   cursor: crosshair;
