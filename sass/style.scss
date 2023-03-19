@@ -23,10 +23,19 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /**------------------ BASE ------------------*/
 @import "base/heading";
+@import "base/markdown";
+
+/**------------------layout------------------*/
+@import "layout/aside-contenu";
+@import "layout/site_main";
 
 /**------------------ COMPOSANT -------------*/
 @import "composant/entete";
-
+@import "composant/blocflex";
+@import "composant/recherche";
+@import "composant/footer";
+@import "composant/menu_cours";
+@import "composant/menu_note-wp";
 
 
 
