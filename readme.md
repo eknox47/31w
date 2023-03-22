@@ -1,4 +1,4 @@
-# Exercice 2
+# Tp1
 ## Formater en scss l'affichage
 ### Auteur : Émile Daigneault
 #### Objectifs
@@ -10,10 +10,6 @@
 - Créer un minimum de 10 commits
 - Déployer le site local vers un serveur distant
 
-github:
+github: https://github.com/eknox47/31w/tp1
 
-https://github.com/eknox47/31w/exer2
-
-Siteground :
-
-https://aecweb8.sg-host.com
+Siteground : https://aecweb8.sg-host.com
