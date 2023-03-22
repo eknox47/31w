@@ -22,6 +22,7 @@ add_theme_support( 'custom-logo',
                         'width'  => 150,
                     ));
 
+add_theme_support( 'custom-background' );
                     
 //Enregistrement des menus                
 function enregistrement_des_menus(){

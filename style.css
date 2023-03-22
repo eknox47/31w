@@ -142,7 +142,7 @@ Mise en page avec display: grid
 
 .site__aside {
   grid-area: aside;
-  background-color: purple;
+  background-color: lightgrey;
   color: white;
   border-radius: 10px;
   margin-left: 2em;
@@ -203,7 +203,7 @@ Mise en page avec display: grid
 /**------------------ COMPOSANT -------------*/
 .site__entete {
   cursor: crosshair;
-  background-color: limegreen;
+  background-color: transparent;
   border-bottom: 2px solid black;
 }
 .site__entete h1 {
@@ -368,8 +368,13 @@ Mise en page avec display: grid
   background-color: rgba(0, 0, 0, 0.03);
 }
 
+footer {
+  background-color: black;
+  min-height: 50px;
+}
 footer h3 {
   text-align: center;
+  color: black;
 }
 
 .menu-cours-container .menu {
