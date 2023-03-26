@@ -1,5 +1,7 @@
 # Exercice #3 (5 points)
 
+## Autheur : Émile Daigneault, e1754709
+
 ###### L\'objectif de l'exercice #3:
 
 - Ajouter, gérer et utiliser des champs personnalisés
