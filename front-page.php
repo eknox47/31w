@@ -1,20 +1,23 @@
 <?php
-/**
-*    Modèle index.php représente le modèle par défaut du thème
-*/
-get_header() ?>
+    //Ceci est notre modele.
+?>
+<?php get_header(); ?>
 <main class="site__main">
-
+    <code>front-page.php</code>
     <section class="blocflex">
         <?php 
-        if (have_posts()):
-            while (have_posts()) : the_post(); ?>
-                <?php 
-                $ma_categorie = "note-wp";
-                if (in_category('galerie')){$ma_categorie = "galerie";}
-                get_template_part("template-parts/categorie", $ma_categorie);
-             endwhile; 
-        endif; ?>   
+            if (have_posts()) :
+                while(have_posts()) : the_post();
+                    //the_title("<h1>", "</h1>");
+                    //the_permalink(); ?>
+
+                    <article>
+                        <h3><a href="<?php the_permalink(); ?>"><?= get_the_title(); ?></a></h3>
+                        <p><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                    </article>
+                <?php endwhile;
+            endif;
+        ?>
     </section>
-</main> 
+</main>
 <?php get_footer(); ?>

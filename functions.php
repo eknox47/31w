@@ -22,6 +22,7 @@ add_theme_support( 'custom-logo',
                         'width'  => 150,
                     ));
 
+add_theme_support( 'custom-background' );
                     
 //Enregistrement des menus                
 function enregistrement_des_menus(){
@@ -49,24 +50,3 @@ function cidweb_modifie_requete_principal( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'cidweb_modifie_requete_principal' );
-
-
-/**
- * Permet de modifier les titre du menu « cours »
- * @param $title : titre du choix menu
- * @param $item : le choix global
- * @param $args: Object qui représente la structure de menu 
- * 
- */
-
- function perso_menu_item_title($title, $item, $args) {
-    // Remplacer 'nom_de_votre_menu' par l'identifiant de votre menu
-    if($args->menu == 'cours') {
-        // Modifier la longueur du titre en fonction de vos besoins
-        $sigle = substr($title, 4, 3);
-        $title = substr($title, 7);
-        $title = "<div class='cours__sigle'>" . $sigle . "</div>" . "<p>" . wp_trim_words($title, 2, ' ... ') . "</p>";
-    }
-    return $title;
-}
-add_filter('nav_menu_item_title', 'perso_menu_item_title', 10, 3);

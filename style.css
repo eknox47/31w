@@ -21,17 +21,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-
 /**
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  background-color: whitesmoke;
   margin: 0;
 }
 
@@ -120,14 +113,15 @@ html {
 }
 
 /**------------------ BASE ------------------*/
+.invisible {
+  display: none;
+}
+
 /**------------------layout------------------*/
-/**
-Mise en page avec display: grid
-*/
+/**/
 .site__entete {
   grid-area: header;
   padding: 1rem clamp(1rem, 3vw, 20rem);
-  background-color: antiquewhite;
 }
 
 .site__main {
@@ -137,15 +131,17 @@ Mise en page avec display: grid
 
 .site__footer {
   grid-area: footer;
-  background-color: antiquewhite;
 }
 
 .site__aside {
   grid-area: aside;
-  background-color: purple;
-  color: white;
-  border-radius: 10px;
+  background-color: rgba(201, 108, 229, 0.209);
+  border-radius: 15px;
+  border: 1px solid lightgray;
   margin-left: 2em;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 .site__aside h3 {
   margin-left: 2.5em;
@@ -157,7 +153,6 @@ Mise en page avec display: grid
 /* body ou un conteneur globale */
 .site {
   display: grid;
-  overflow-x: hidden;
   grid-template-columns: auto;
   grid-template-areas: "header" "aside" "main" "footer";
   row-gap: 50px;
@@ -173,9 +168,6 @@ Mise en page avec display: grid
   grid-template-areas: "header" "main" "footer";
   row-gap: 50px;
 }
-.no-aside .site__aside {
-  display: none;
-}
 @media screen and (min-width: 1000px) {
   .no-aside {
     grid-template-columns: auto;
@@ -183,28 +175,23 @@ Mise en page avec display: grid
   }
 }
 
-.site__main {
-  /* margin: 0 2em 2em 2em;
-  padding: 3em;
-  background-color: orange;
-  border-radius: 15px;
-  border: 2px solid black;
-
-  h1,p {
-      max-width: 800px;
-      margin: 2em;
-  }
-  p {
-      font-size: 20px;
-      line-height: 1.2;
-  } */
+.site__main section {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 2em;
+  margin: 2em;
+}
+.site__main section * {
+  padding: 0.5em;
+}
+.site__main section p {
+  max-width: 80ch;
 }
 
 /**------------------ COMPOSANT -------------*/
 .site__entete {
-  cursor: crosshair;
-  background-color: limegreen;
-  border-bottom: 2px solid black;
+  background-color: transparent;
+  overflow-x: hidden;
 }
 .site__entete h1 {
   text-align: center;
@@ -213,14 +200,61 @@ Mise en page avec display: grid
 .site__entete h1 a {
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .logo__menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.menu-entete-container .menu {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  list-style: none;
+  list-style-type: none;
+  margin-left: auto;
+}
+.menu-entete-container .menu .menu-item {
+  flex: 1 0 20px;
+  padding: 0 0.5em;
+}
+.menu-entete-container .menu .menu-item a {
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 20px;
+  padding: 3px 5px;
+  color: black;
+  text-decoration: none;
+}
+.menu-entete-container .menu .menu-item a:hover {
+  color: lightgray;
+}
+
+@media screen and (max-width: 600px) {
+  .site__entete h1 {
+    text-align: center;
+    padding: 2em;
+  }
+  .site__entete h1 a {
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+.menusearch {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+@media screen and (min-width: 1000px) {
+  .menusearch {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
 }
 
 #chkBurger {
@@ -234,7 +268,7 @@ Mise en page avec display: grid
 .burger {
   display: block;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .burger {
     display: none;
   }
@@ -244,56 +278,10 @@ Mise en page avec display: grid
   transform: translateX(300px);
   transition: transform 0.25s;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .menu-entete-container {
     transform: translateX(0);
   }
-}
-
-.menu {
-  display: flex;
-  list-style-type: none;
-  flex-direction: column;
-  align-items: flex-end;
-}
-@media screen and (min-width: 600px) {
-  .menu {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-}
-.menu .menu-item {
-  flex: 1 0 20px;
-  padding: 0 0.5em;
-}
-.menu .menu-item a {
-  white-space: nowrap;
-  font-size: 18px;
-  padding: 3px 5px;
-  color: black;
-  text-decoration: none;
-}
-.menu .menu-item a:hover {
-  color: lightgray;
-}
-.menu .menu-item p {
-  margin: 0;
-}
-
-@media screen and (max-width: 600px) {
-  .site__entete h1 {
-    text-align: center;
-    padding: 2em;
-  }
-  .site__entete h1 a {
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-}
-.recherche {
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 .blocflex {
@@ -303,69 +291,37 @@ Mise en page avec display: grid
 }
 
 .blocflex__article {
-  background-color: orange;
+  background-color: rgba(112, 134, 153, 0.8);
   border-radius: 10px;
-  border: 2px solid black;
-  padding: 2em;
-  flex: 1 0 400px;
-  max-height: 300px;
-  margin: 15px;
-  max-width: 600px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 18px;
-}
-.blocflex__article a {
-  text-decoration: none;
-  font-size: 24px;
-  color: black;
-  cursor: pointer;
-}
-.blocflex__article a:hover {
-  color: lightseagreen;
-}
-
-/* article * {
-    text-decoration: none;
-    color: black;
-} */
-.blocflex__galerie {
-  flex: 1 0 100%;
-}
-
-/* @media screen and (max-width:600px) {
-
-    .blocflex {
-        font-size: 18px;   
-    }
-
-} */
-.menusearch {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  flex-wrap: wrap;
+  border: 1px solid lightslategray;
   padding: 1em;
-  flex-direction: column-reverse;
+  flex: 0 0 400px;
+  height: 400px;
+  margin: 10px;
+  max-width: 700px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-@media screen and (min-width: 1000px) {
-  .menusearch {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    flex: 1;
+
+article * {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .blocflex {
+    font-size: 18px;
   }
 }
-.menusearch .main__recherche {
+.menusearch {
+  display: flex;
+  padding: 1em;
+}
+.menusearch .recherche {
   padding-top: 1em;
 }
-.menusearch .main__recherche article {
+.menusearch .recherche article {
   background-color: lightgrey;
   margin: 10px;
-}
-.menusearch input {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.03);
 }
 
 footer h3 {
@@ -376,6 +332,7 @@ footer h3 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
 }
 @media screen and (min-width: 1000px) {
   .menu-cours-container .menu {
@@ -384,11 +341,24 @@ footer h3 {
 }
 .menu-cours-container .menu .menu-item {
   list-style: none;
+  padding: 1em;
+}
+.menu-cours-container .menu .menu-item a {
+  padding: 1em;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.menu-cours-container .menu .menu-item a p {
+  color: black;
 }
 .menu-cours-container .menu .menu-item a .cours__sigle {
+  color: black;
   padding: 3px;
 }
 .menu-cours-container .menu .menu-item a .cours__titre {
+  color: black;
   display: none;
 }
 @media screen and (min-width: 1000px) {
@@ -409,15 +379,11 @@ footer h3 {
 }
 .menu-note-wp-container .menu .menu-item {
   list-style: none;
+  padding: 10px;
 }
-.menu-note-wp-container .menu .menu-item a .cours__sigle {
-  padding: 3px;
-}
-.menu-note-wp-container .menu .menu-item a .cours__titre {
-  display: none;
-}
-@media screen and (min-width: 1000px) {
-  .menu-note-wp-container .menu .menu-item a .cours__titre {
-    display: block;
-  }
+.menu-note-wp-container .menu .menu-item a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

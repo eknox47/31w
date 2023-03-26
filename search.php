@@ -8,7 +8,8 @@
  */
 get_header(); ?>
 <main class="site__main">
-    <section class="main__recherche">
+    <code>search.php</code>
+    <section class="recherche">
     <?php 
         if (have_posts()) :
             while(have_posts()) : the_post();
